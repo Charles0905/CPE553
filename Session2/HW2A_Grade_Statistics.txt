@@ -1,0 +1,27 @@
+You will be creating a program that reads in a file named "grades2.txt" that is formatted as follows:
+
+      N
+      grade0 grade1 ... gradeN
+      Where N is the number of space-delimited, floating-point values on the following line.
+
+Your program will produce the following statistics:
+1) Min
+2) Max
+3) Average
+4) Standard Deviation
+
+You may assume all input will be properly formatted and that there is a newline ('\n') at the end of the file. 
+
+Output Format
+The program will print the min, max, average, and standard deviation, in that order, each on a newline WITHOUT any extra information.  
+For example:
+        ~/> ./a.out
+        12.6
+        100.0
+        82.95
+        3.786
+ 
+
+Implementation Details
+Your program should use the template provided in class (03bfiles.cc).  It should read values into an array as well as use references when passing mutable variables.
+This is C++ class, so please use C++ utils/features to do file reading and handling.  This means do NOT use fopen, fread, etc.
