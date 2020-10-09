@@ -1,0 +1,16 @@
+1. Complete hwBody, creating body objects that will later be used for the 
+solar system simulator.
+   https://github.com/StevensDeptECE/CPE553-CPP/blob/master/session03/hwBody.cc (Links to an external site.)
+
+2. Do not edit the main() function in any way.
+
+3. Create a Body class in the same .cc file as main() that allows the program to 
+   compile and function properly. Pay special attention to the included comments in 
+   main() that explain how to implement the Complex class.
+
+4. << friend
+Example output:
+
+earth 5.972e24 0 0 0 6.371e6
+
+moon 7.34767309e22 384.400e6 0 0 1.737e6
