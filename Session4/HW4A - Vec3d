@@ -1,0 +1,24 @@
+1. Copy and paste the main() function from hwVec3d.cc (session04).
+   https://github.com/StevensDeptECE/CPE553-CPP/blob/master/session04/hwVec3d.cc (Links to an external site.)
+   Do NOT edit the main() function in any way. You will be creating a Vec3d class
+   to get this main() function working.
+
+2. The main() function has been separated into several sections:
+     Section 1: Create constructor/s to create the Vec3d objects.
+     Section 2: Overload the three operators for vector math.
+     Section 3: Compute the dot product as a function and as a method.
+     Section 4: Create three methods to compute various vector properties.
+     Section 5: Overload the << operator to output formatted Vec3d objects.
+                Example format: (1.0,2.5,3.5)
+
+3. Things to remember:
+     You should always think for each method, "Can I make this method readonly(const)?"
+     For each line in main, think "What method would I have to write in the class 
+     to make this work?"
+ 
+
+Example output:
+
+a: (1.0,2.5,3.5)
+b: (2,0,0)
+c: (2,3.5,0)
