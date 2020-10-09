@@ -1,0 +1,43 @@
+1. Download the solarsystem.dat file in current directory (google drive).
+
+   https://drive.google.com/drive/folders/0Bwxfq4Y7f7vkNGNwLUszUzBYX1k (Links to an external site.)
+
+   Do not change the file name or file type. Tests will be performed with a variety of different inputs in the solarsystem.dat file.
+
+2. You will read in each line and create a Body object.
+
+   The object will store the name, mass, radius, and position.
+
+   In order to calculate position, choose a distance from the center which is the 
+   average of perigee and apogee.
+
+   Compute the position vector as using a random angle and compute 
+In order to compute a random number see: randexample.cc in session04
+
+
+
+   x = r cos(t), y = r sin(t).
+
+In order to learn how to read lines of input, watch the video on fileio in the c++ 
+directory: https://drive.google.com/open?id=1Xl4KP9B8Y4Co5Q5XjXlvXwV7Cr_Qgkq7 (Links to an external site.)
+Also see for overloading operator >> : https://docs.microsoft.com/en-us/cpp/standard-library/overloading-the-input-operator-for-your-own-classes?view=vs-2019 (Links to an external site.)
+
+Input file (solarsystem.dat):
+The input file (solarsystem.dat) contains information in the following format:
+
+Name Orbits Mass Diam Perihelion Aphelion ...etc
+Sun NaN 1.9891e30 1.391684e9 0 0
+Mercury Sun 0.330e24 4.879e6 4.6e10 6.98e10
+Xander Sun 4.87e24 1.2104e7 1.075e11 1.089e11
+Dralo Sun 5.22e26 1.4336e6 3.055e12 3.294e12
+... etc
+
+Names of planets will not necessarily be real, and the amount of planets may vary.
+Therefore, please read in planets until the end of file.
+
+Output:
+
+Your output should be in the following format for each body:
+
+Name Mass Radius Position
+Place each body on a separate line.
