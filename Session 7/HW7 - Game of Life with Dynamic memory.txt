@@ -1,0 +1,127 @@
+The game of life is a finite automata invented by John Horton Conway.  https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life (Links to an external site.)
+
+You will be creating a main() function and supporting functions to practice classes, file streams, and arrays.
+
+You will submit ONE file on Canvas called LastName_Firstname_HW3B.cc (or .cpp).
+
+There is no need to submit your own hw3b.dat file as the grader will have their own.
+
+Instructions:
+
+1. Create a text file called gameoflife.dat.
+   You will be creating a method to load initial states from this file.
+   The first line contains the size of the grid x y
+   followed by the number of iterations and after how many to print
+   For every asterisk, the cell is alive, and every period represents dead.
+   Example, compute a 10 x 10 grid for 100 generations, printing out every 5th
+   generation:
+
+          10 10 100 5
+          ..........
+          ***.......
+          ..........
+          **........
+          **........
+          ..........
+          ..........
+          ..........
+          ..........
+          ..........
+
+   Or, given t 10 10 100 10, you should compute 100 generations, printing 
+   every 10th one. So starting with generation 0:
+          print 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+
+
+2. Create a class containing:
+   1. An array L (or life) which is 2-dimensional.
+   2. A number of generations to compute.
+   3. How often to print the field.
+
+Useful Hints:
+
+Internally, I would recommend that either L be int.  The reason int might be an easier representation is that you must count how many of your neighbors are alive, and the easy way to see how many neighbors you have for an element i,j would be:
+
+      L[i][j-1] + L[i][j+1] + L[i-1][j] + ...
+
+Anyway, the code is a bit messy because at the edge, you must be careful not to ask for an element that is outside the array. If you do, you will get into memory that is not in the array and either crash (if you are lucky) or just get wrong results.
+
+So the clever way to make your "life" easy is to create an array that is bigger than the grid you intend to use.  If you want a grid that is 10x10, instead create an array L[12][12]. 
+
+If you only process and print elements from 1 to 10, you will never go out of bounds.  Note also that in order to compute the results for next generation, it is easier if you have two arrays, one for time now, and one for time future.  If you only have one array, then you must be very careful. The algorithm is supposed to be computing whether a cell is alive or not based on its neighbors. Each cell is computed at the same time.  But if you change one cell and move on to the next, you will get incorrect results because the next cell is supposed to be calculated based on the values BEFORE you changed the cell. 
+
+Sample Shapes to Test:
+   
+       **
+       **
+   If you have a box of 4, then each of them has 3 neighbors, so this is stably alive.
+
+      **
+  Just two by themselves will go away in one turn.  Each only has 1 neighbor.
+
+     ***
+  Three cells in a row is an oscillator.  It turns into three cells vertically, then back again.
+
+
+Example output:
+
+
+Number of total generations: 4. Array displayed every 1 generation/s.
+
+Generation 0:
+ . . . . . . . . . . 
+ * * * . . . . . . . 
+ . . . . . . . . . . 
+ * * . . . . . . . . 
+ * * . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+Generation 1:
+ . * . . . . . . . . 
+ . * . . . . . . . . 
+ . . * . . . . . . . 
+ * * . . . . . . . . 
+ * * . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+
+Generation 2:
+ . . . . . . . . . . 
+ . * * . . . . . . . 
+ * . * . . . . . . . 
+ * . * . . . . . . . 
+ * * . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+
+Generation 3:
+ . . . . . . . . . . 
+ . * * . . . . . . . 
+ * . * * . . . . . . 
+ * . * . . . . . . . 
+ * * . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+Generation 4:
+ . . . . . . . . . . 
+ . * * * . . . . . . 
+ * . . * . . . . . . 
+ * . * * . . . . . . 
+ * * . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
+ . . . . . . . . . . 
