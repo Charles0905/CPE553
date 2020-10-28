@@ -1,0 +1,36 @@
+You will be given a main() function that you can partially edit and creating a DynamicBitmap class to output an image file.
+
+FOR THIS WEEK, YOU DO NOT HAVE TO WRITE ANY OF THE DRAWING METHODS.
+same for saving the image. Since we did not cover it, you do not have to.
+
+Just constructor, destructor, copy constructor, operator =.
+
+But all parts of the assignment will be given out for next week since we did not review them so
+feel free to do it all if you can.
+
+Instructions:
+
+1. Copy and paste the main() function from hwBitmap.cc (session08).
+   https://github.com/StevensDeptECE/CPE553-CPP/blob/master/session08_dynamicmemory/hwBitmap2.cc (Links to an external site.)
+
+2. In the previous assignment you were required to add code to get all colors working.
+   Add this code again into the first section of this assignment.
+
+   The second section should not be edited. Make no changes in this section.
+
+3. The Bitmap image does NOT have a set size this time but should handle a potential 
+   dynamic input (a given size for now is 1024x1024).
+   
+   Your DynamicBitmap class will now need to handle this dynamic memory and create 
+   these functions:
+    1. Constructor (That allocates dynamic memory)
+    2. Destructor (Frees the memory, delete [])
+    3. Copy Constructor
+    4. Operator = (Use either old way or copy and swap)
+
+4. Your code should output to a file with the proper formatting to be read as an image.
+   This includes using the stb_image library dicussed in class and saved here: 
+   https://github.com/StevensDeptECE/CPE553-CPP/tree/master/imagelib (Links to an external site.)
+
+   For grading, your code will be run to check for compiler errors, then the created 
+   image file will be opened for accuracy for the color/position/size of all shapes.
